@@ -1,0 +1,17 @@
+# Virtual environment (recreate with: python3.13 -m venv .venv && pip install -r requirements.txt)
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter. The notebooks duplicate the .py apps line for line; the scripts are
+# the tracked source of truth so the two can't drift apart in the repo.
+.ipynb_checkpoints/
+*.ipynb
+
+# Streamlit secrets (config.toml is committed on purpose)
+.streamlit/secrets.toml
+
+# macOS
+.DS_Store

@@ -1,0 +1,7 @@
+streamlit==1.63.0
+pandas==3.0.5
+matplotlib==3.11.2
+numpy-financial==1.1.0
+ipykernel==7.3.0
+nbclient==0.11.0
+nbformat==5.11.1
