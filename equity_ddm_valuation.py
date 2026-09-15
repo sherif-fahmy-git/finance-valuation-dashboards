@@ -1,8 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+"""Two-stage dividend discount model.
 
-# In[6]:
+Values a stock from an explicit dividend forecast plus a Gordon growth terminal
+value, then compares intrinsic value to market price for a BUY/HOLD/SELL call.
 
+Run with:
+
+    streamlit run equity_ddm_valuation.py
+
+then open the local URL it prints.
+"""
 
 import streamlit as st
 
@@ -64,9 +70,6 @@ else:
         st.write("Recommendation:  HOLD")
     else:
         st.write("Recommendation:  SELL")
-
-
-# In[ ]:
 
 
 

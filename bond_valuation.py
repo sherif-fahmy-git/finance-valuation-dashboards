@@ -1,10 +1,15 @@
-#!/usr/bin/env python
-# coding: utf-8
+"""Bond value and duration calculator.
 
-# In[3]:
+Prices a coupon bond at annual, semiannual, quarterly or monthly compounding,
+reports Macaulay and modified duration, and plots the price-yield curve.
 
+Run with:
 
-import pandas as pd
+    streamlit run bond_valuation.py
+
+then open the local URL it prints.
+"""
+
 import matplotlib.pyplot as plt
 import streamlit as st
 
@@ -81,9 +86,6 @@ ax.set_xlabel("Yield to Maturity (%)")
 ax.set_ylabel("Bond Value ($)")
 
 st.pyplot(fig)
-
-
-# In[ ]:
 
 
 

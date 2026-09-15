@@ -1,8 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+"""Deterministic capital budgeting model.
 
-# In[12]:
+Builds a free-cash-flow-to-firm pro-forma from revenue growth, margins, capex,
+working capital and tax, then evaluates it on NPV, IRR and payback period.
 
+Run with:
+
+    streamlit run capital_budgeting.py
+
+then open the local URL it prints.
+"""
 
 import pandas as pd
 import streamlit as st
@@ -159,13 +165,6 @@ if pbb <= payback:
     st.write("Recommendation based on PBB: GO")
 else:
     st.write("Recommendation based on PBB: NO-GO")
-
-
-
-
-
-
-# In[ ]:
 
 
 

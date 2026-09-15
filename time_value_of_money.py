@@ -1,8 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
+"""Present value / future value calculator.
 
-# In[3]:
+Discounts or compounds a discrete cash-flow forecast across any number of
+growth phases, closing with either an annuity or a growing perpetuity.
 
+Run with:
+
+    streamlit run time_value_of_money.py
+
+then open the local URL it prints.
+"""
 
 import streamlit as st
 
@@ -132,10 +138,6 @@ if st.button("Calculate"):
 
         st.divider()      
         st.write(f"FV TOTAL = ${total_future_value:.2f}")
-    
-
-
-# In[ ]:
 
 
 
