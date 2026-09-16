@@ -65,9 +65,14 @@ def fv_from_pv(pv, r, t):
     return pv * ((1+r) ** t)
 
 def pv_annuity(cf, g, r, t):
+    if abs(r - g) < 1e-12:
+        return cf * t / (1 + r)
     return (cf / (r-g)) * (1 - ((1+g)/(1+r)) ** t)
 
 def pv_perpetuity(cf, g, r):
+    if g >= r:
+        st.error("Perpetuity growth rate must be less than the discount rate.")
+        st.stop()
     return cf / (r-g)
 
 
