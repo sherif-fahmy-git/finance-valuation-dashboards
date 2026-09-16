@@ -9,16 +9,7 @@ changed and their effect on value seen immediately. The valuation math is
 written from first principles in plain Python rather than pulled from a
 library, which keeps every formula visible and auditable.
 
-## The models
-
-| App | What it does |
-| --- | --- |
-| `time_value_of_money.py` | Present and future value across an arbitrary number of growth phases, with a discrete cash-flow forecast and either an annuity or a growing perpetuity as the terminal phase. |
-| `bond_valuation.py` | Prices a coupon bond at any compounding frequency, reports Macaulay and modified duration, and plots the price-yield curve to show convexity. |
-| `equity_ddm_valuation.py` | Two-stage dividend discount model: an explicit dividend forecast plus a Gordon growth terminal value, handling a partial first period, and returns a BUY / HOLD / SELL call against market price. |
-| `capital_budgeting.py` | Builds a full free-cash-flow-to-firm pro-forma from revenue growth, margins, capex, working capital and tax, then evaluates it on NPV, IRR and payback period with a GO / NO-GO recommendation on each. |
-
-## Running an app
+## Setup
 
 Requires Python 3.13.
 
@@ -26,12 +17,61 @@ Requires Python 3.13.
 python3.13 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
+## The models
+
+### Time Value of Money
+
+Present and future value across an arbitrary number of growth phases, with a
+discrete cash-flow forecast and either an annuity or a growing perpetuity as
+the terminal phase.
+
+```bash
+streamlit run time_value_of_money.py
+```
+
+![Time Value of Money](screenshots/time_value_of_money.png)
+*PV of a two-phase cash flow — 5 years of 5% growth then a 3% perpetuity, discounted at 12%.*
+
+### Bond Valuation
+
+Prices a coupon bond at any compounding frequency, reports Macaulay and
+modified duration, and plots the price-yield curve to show convexity.
+
+```bash
 streamlit run bond_valuation.py
 ```
 
-Streamlit prints a local URL; open it to use the dashboard. Swap in any of the
-four filenames above to run a different model.
+![Bond Valuation](screenshots/bond_valuation.png)
+*Pricing a 6% semiannual coupon bond at an 8% yield — trades below par with ~7 year duration.*
+
+### Equity DDM Valuation
+
+Two-stage dividend discount model: an explicit dividend forecast plus a Gordon
+growth terminal value, handling a partial first period, and returns a
+BUY / HOLD / SELL recommendation against market price.
+
+```bash
+streamlit run equity_ddm_valuation.py
+```
+
+![Equity DDM Valuation](screenshots/equity_ddm_valuation.png)
+*DDM valuation of KO — 3-year dividend forecast with a 3% terminal growth rate discounted at 9%.*
+
+### Capital Budgeting
+
+Builds a full free-cash-flow-to-firm pro-forma from revenue growth, margins,
+capex, working capital and tax, then evaluates it on NPV, IRR and payback
+period with a GO / NO-GO recommendation on each.
+
+```bash
+streamlit run capital_budgeting.py
+```
+
+![Capital Budgeting — Inputs](screenshots/capital_budgeting_inputs.png)
+![Capital Budgeting — Results](screenshots/capital_budgeting_results.png)
+*Full FCFF pro-forma with NPV, IRR and payback — evaluating a $750M capex project at 15.5% WACC.*
 
 ## Notes on the modelling
 
