@@ -7,7 +7,13 @@ valuation, and capital budgeting.
 Every formula is written from scratch in plain Python, so the math stays
 visible and auditable.
 
-## Setup
+## Live demo
+
+**[Open the live app](LIVE_DEMO_URL)**
+
+All four models in one place, no install needed. Pick a model from the sidebar.
+
+## Run locally
 
 Requires Python 3.13.
 
@@ -15,7 +21,10 @@ Requires Python 3.13.
 python3.13 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+streamlit run streamlit_app.py
 ```
+
+Each model also runs on its own. Those commands are listed below.
 
 ## Time Value of Money
 
