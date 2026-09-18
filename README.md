@@ -9,7 +9,7 @@ visible and auditable.
 
 ## Live demo
 
-**[Open the live app](LIVE_DEMO_URL)**
+**[Open the live app](https://finance-valuation-dashboards-po8tkjimd4oj22ujgdm7kl.streamlit.app/)**
 
 All four models in one place, no install needed. Pick a model from the sidebar.
 
